@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Jagadeesh</div>
+    <div id="root">
+      <h1>This is jagadeesh</h1>
+    </div>
+    <!-- <script>
+      const heading = document.createElement("h1");
+      heading.innerHTML = "hello world";
+      const root = document.getElementById("root");
+      root.appendChild(heading);
+    </script> -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- <script>
+      // To create element in React we use createElement method
+      // in this {} means the place where u give attributes to the tab
+      const heading = React.createElement("h1", {}, "hello world");
+      // To create root element in React we use createRoot method from reactdom library
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      // u have to render element in browser for that we use render method
+      // render method take heading object and convert it to h1 tag and put it on the browser
+      root.render(heading);
+    </script> -->
+    <script src="./App.js"></script>
+  </body>
+</html>
