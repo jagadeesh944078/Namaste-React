@@ -3,10 +3,15 @@
 # git setup
 
 -git config --global user.name "your user name"
+
 -git config --global user.email "your email id"
+
 -git add .
+
 -git commit -m "first commit message"
+
 -git push origin main
+
 -git pull
 
 # creating multpile branches in git
