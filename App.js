@@ -21,6 +21,7 @@ const parent = React.createElement("div", { id: "parent" }, [
     React.createElement("h1", { id: "heading2" }, "hello react2"),
   ]),
 ]);
+
 const heading = React.createElement("h1", { id: "heading" }, "hello world");
 // it will print the object not html element
 console.log(heading);
