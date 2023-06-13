@@ -1,19 +1,9 @@
-/**
- * <div id="parent">
- *   <div id="child">
- *        <h1>Hello World</h1>
- *        <h2>Hello World</h2>
- *   </div>
- *   <div id="child">
- *        <h1>Hello World</h1>
- *        <h2>Hello World</h2>
- *   </div>
- * </div>
- */
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child" }, [
-    React.createElement("h1", { id: "heading" }, "hello react"),
+    React.createElement("h1", { id: "heading" }, "hello react1"),
     React.createElement("h1", { id: "heading2" }, "hello react2"),
   ]),
   React.createElement("div", { id: "child" }, [
