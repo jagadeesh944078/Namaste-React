@@ -43,30 +43,49 @@ OR
 # i creates
 
 -Dev Build
+
 -Local Server
+
 -HMR - (hot module replacement)
+
 -File watching alogorithm - written in C++
+
 -Caching - Faster builds
+
 -image optimization
+
 -minification
+
 -Bundling
+
 -compressing
+
 -consistent Hashing - its big topic
+
 -code spliting
+
 -diffrential bundling - support older browesers as well
+
 -Dignostic
+
 -error handling
+
 -host on https as well
+
 -Tree shaking - removed unused code for u
 
 - diff dev and prod bundles
 
 package.json
+
 -if we use "caret(^)" before version number if suppose there is any minor update in future it automaticall update to the latest version
+
 -"tilde(~)" update automatically for major updates
 
 package-lock.json
+
 -it locks the version and the keep exact version of the dependencies
+
 -it tracks exact version which u installed in your project
 
 official documentation of React
