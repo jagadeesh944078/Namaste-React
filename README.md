@@ -148,10 +148,7 @@ Ex: button is one component & header component & footer etc..
 
 # Functional Component ?
 
--Functional component is a normal javascript function which return some piece of jsx code or React element and React function should start with capitial letter
-
+- Functional component is a normal javascript function which return some piece of jsx code or React element and React function should start with capitial letter
 - we can write functions using function keyword as well but arrow function is newer way and industry standard everywhere you see array functions only most
-
 - jsx syntax take care malicious attack (xcross scripting site attack)
-
 - jsx expression must have one single parent
