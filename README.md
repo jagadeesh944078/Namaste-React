@@ -104,3 +104,28 @@
 - we can write functions using function keyword as well but arrow function is newer way and industry standard everywhere you see array functions only most
 - jsx syntax take care malicious attack (xcross scripting site attack)
 - jsx expression must have one single parent
+
+# episode -04
+
+# props
+
+- props nothing but properties (short form is props) which pass something to the component
+- if u want to pass dynamically some data to the compoenent we use props
+- passing props to the component just like passing argument to the javascript function
+- React basically takes all the props values grab it inside the object so it will pass over function component as props
+
+# config driven UI
+
+- UI changes according to the config(backend data) automatically based on location or something(ex: swiggy app u can see carousel based on location offers will be changed)
+- example suppose in each location u want diffrent background-color then u can send color as config so this config will Drive your UI its known as config driven UI
+
+- whenever you are looping on anything u have to always give the key
+
+# why we need to use key while looping any React component ?
+
+- react itself won't able to find out uniquely identified component(restaurant card) what it basically do it will rerender all components when u add any new component(restaurant card)
+- it will create performence issue because there 100 restaurant cards then it will rerender all cards when u add any extra card that's "key" is required
+- when u add key value then each card have unique id so react can easily findout when new card can be added in this time it won't rerender all restarent cards only in specfic postion the card will be added " its a huge performance optimization of your application " so don't forget to add key value while looping component
+- sometimes we use "key={index}" logically its correct but react itself won't recommend to use index value for more info on this go to offical website https://legacy.reactjs.org/docs/lists-and-keys.html
+- suppose if id misses in any object in that case temporary use index value but ask the backend developer to send id for each object using id is the best practise
+- if u don't get id for each object in that case better use key={index} because instead of not using key better use key value as index
