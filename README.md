@@ -124,8 +124,65 @@
 # why we need to use key while looping any React component ?
 
 - react itself won't able to find out uniquely identified component(restaurant card) what it basically do it will rerender all components when u add any new component(restaurant card)
-- it will create performence issue because there 100 restaurant cards then it will rerender all cards when u add any extra card that's "key" is required
+- it will create performence issue because there 100 restaurant cards then it will rerender all cards when u add any extra card that's y "key" is required
 - when u add key value then each card have unique id so react can easily findout when new card can be added in this time it won't rerender all restarent cards only in specfic postion the card will be added " its a huge performance optimization of your application " so don't forget to add key value while looping component
 - sometimes we use "key={index}" logically its correct but react itself won't recommend to use index value for more info on this go to offical website https://legacy.reactjs.org/docs/lists-and-keys.html
 - suppose if id misses in any object in that case temporary use index value but ask the backend developer to send id for each object using id is the best practise
 - if u don't get id for each object in that case better use key={index} because instead of not using key better use key value as index
+
+# episode-05
+
+# why we need framework or library if everthing we can do with html,css,javascript?
+
+- because a framework or library it makes developers experience easy it makes u write less code and do more things on web browser
+
+# Folder Structure
+
+- we have to keep all created components under src floder because complete source code will be there under src folder its a industry practise
+- we can write number of components in one js file also but we are writting code for humans so if anybody see your code they should also understand your code easily so better to divid each component in each js file
+- example suppose there 1000 components in u write everything in one js file its not good practise u need to structure your app proper way
+- finally parcel will compress everything into one file
+- react won't recommend u to create specific file structure its upto u to create your own file structure for more info https://legacy.reactjs.org/docs/faq-structure.html
+- while creating components some people create extension with ".js" or ".jsx" or ".ts" its doesn't matter u can keep anything but most of the projects u can extension with ".js"
+- it will make u zero diffrence if u make ".js" or ".jsx"
+- always try to keep component name as file name example component name "Header" try to save File name as "Header.js"
+- first you have to write export default "component name" then write import where u want to import the file
+- never ever keep the hardcorded data in your component
+- keep all hardcoded data under "util" folder here some people create folder name as "commom" or "config" its your wish but most name folder name as "util" because these are utilities we use across our components
+- under util folder save file name start with small letter only example "mockData.js" because its not a component
+- don't write more than 100 lines code in each component(its good practise)
+
+  # there are 2 types of exports and 2 types of imports
+
+  1. default export(ex: export default "component name")
+  2. named export(ex: if u want to export multiple things use named export export const "name" etc..)
+
+  3. default import(ex: import Header from './component/Header' or import Header from './component/Header.js')
+  4. named import(ex: import {Header} from '../util/Header' or import {Header} from '../util/Header.js')
+
+  # Namasthe Food App Planning
+
+/\*\*
+
+- Header
+- - Logo
+- - nav items
+- Body
+- - Search
+- - Resterant container
+- - restro cards
+-     - restroent name
+-     - rating
+- Footer
+- - copy right
+- - links
+- - address
+    \*/
+
+    # React Hooks
+
+    - hooks are normal JS utility function which comes with some super power that is given by react
+    - there are 2 important hooks u will use 90% in your application
+    - 1. useState() - super powerful state variable in react
+    - 2. useEffect()
+    - whenever state variable updates react will rerender the component
