@@ -69,7 +69,7 @@
 
 - jsx is javascript syntax which is easier to create the element and jsx is not part of React here jsx is diffrent and react is different
 - jsx is not a html or xml in JS u can say its html like syntax or xml like syntax
-- we can large application without using JSX as well but JSX makes our developers life easier
+- we can build large application without using JSX as well but JSX makes our developers life easier
 - jsx is a convention where we merge all html and JS together
 
 # how JSX code works?
@@ -140,17 +140,17 @@
 
 - we have to keep all created components under src floder because complete source code will be there under src folder its a industry practise
 - we can write number of components in one js file also but we are writting code for humans so if anybody see your code they should also understand your code easily so better to divid each component in each js file
-- example suppose there 1000 components in u write everything in one js file its not good practise u need to structure your app proper way
-- finally parcel will compress everything into one file
+- example suppose there 1000 components in your project u write everything in one js file its not good practise u need to structure your app proper way
+- finally parcel will compress everything into one file when u do npm run build
 - react won't recommend u to create specific file structure its upto u to create your own file structure for more info https://legacy.reactjs.org/docs/faq-structure.html
-- while creating components some people create extension with ".js" or ".jsx" or ".ts" its doesn't matter u can keep anything but most of the projects u can extension with ".js"
+- while creating components some people create extension with ".js" or ".jsx" or ".ts" its doesn't matter u can keep anything but most of the projects u can see extension with ".js"
 - it will make u zero diffrence if u make ".js" or ".jsx"
 - always try to keep component name as file name example component name "Header" try to save File name as "Header.js"
 - first you have to write export default "component name" then write import where u want to import the file
 - never ever keep the hardcorded data in your component
 - keep all hardcoded data under "util" folder here some people create folder name as "commom" or "config" its your wish but most name folder name as "util" because these are utilities we use across our components
 - under util folder save file name start with small letter only example "mockData.js" because its not a component
-- don't write more than 100 lines code in each component(its good practise)
+- don't write more than 100 lines of code in each component(its good practise)
 
   # there are 2 types of exports and 2 types of imports
 
@@ -184,5 +184,30 @@
     - hooks are normal JS utility function which comes with some super power that is given by react
     - there are 2 important hooks u will use 90% in your application
     - 1. useState() - super powerful state variable in react
+    - useState is used to create local state variable
     - 2. useEffect()
     - whenever state variable updates react will rerender the component
+
+    # episode -06
+
+    # monolith architecture
+
+    # microservice architecture
+
+    # 2ways u can call api
+
+    - page loads -> API call -> render UI
+    - page loads -> render UI -> API Call -> ReRender UI
+    - React follows 2nd approch it gives better user experience and here in react render cycle very fast
+
+    # what is hook in React ?
+
+    - hook nothing a normal javascript function which React give to us it contain its own specific use case where we use these functions
+
+    # useEffect() hook
+
+    - useEffect() has its own purpose its just like javascript function we import from react library
+
+    # swiggy api call
+
+    # shimmer UI

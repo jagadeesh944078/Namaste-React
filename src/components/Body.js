@@ -1,29 +1,67 @@
 import RestaurantCard from "./RestaurantCard";
-import restaurantList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  /* local state variable - super power of variable */
-  /* React constantly monitor this state variable as soon as u call setListOfRestaurant function
-   react will use diff alogrithm to find out diffrence in old & new virtual DOM  and update the ui */
-  const [listOfRestaurant, setListOfRestaurant] = useState(restaurantList);
+  /* local state variable - super powerful of variable */
+  /* react constantly monitor the useState() function & whenever local state variable changes it rerender UI */
 
-  /* its array Destructuring u can write useState() like this also just for understanding */
-  //   const arr = useState(restaurantList);
-  //   const [listOfRestaurant, setListOfRestaurant] = arr;
+  const [listOfRestaurant, setListOfRestaurant] = useState([]);
+  const [filteredRestarentList, setFilteredRestarentList] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
-  /* OR everthing is same */
-  //   const listOfRestaurant = arr[0];
-  //   const setListOfRestaurant = arr[1];
+  /* useEffect calls after body component renders */
+  /* here we pass 2 arguments 1 is arrow function(call back function) another one is dependency array*/
 
-  return (
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.943818&lng=77.619004&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    console.log(json);
+    /* setListRestaurant function is coming from local state variable not javascript function */
+    /* optional chaining */
+    setListOfRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestarentList(json?.data?.cards[2]?.data?.data?.cards);
+  };
+
+  /* Conditional Rendering (rendering basis on the condition) */
+  //   if (listOfRestaurant.length === 0) {
+  //     return <Shimmer />;
+  //   }
+
+  return listOfRestaurant?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
-      <div className="search">
+      <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button
+            onClick={() => {
+              const filteredRestroList = listOfRestaurant.filter((res) =>
+                res.data.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setFilteredRestarentList(filteredRestroList);
+            }}
+          >
+            search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurant.filter(
-              (item) => item.data.avgRating >= 4
+              (res) => res.data.avgRating >= 4
             );
             setListOfRestaurant(filteredList);
           }}
@@ -32,7 +70,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listOfRestaurant.map((resData) => (
+        {filteredRestarentList?.map((resData) => (
           <RestaurantCard key={resData.data.id} resData={resData} />
         ))}
       </div>
