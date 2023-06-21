@@ -20,7 +20,8 @@
   "homepage": "https://github.com/jagadeesh944078/Namaste-React#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.13.0"
   },
   "devDependencies": {
     "parcel": "^2.9.2",
