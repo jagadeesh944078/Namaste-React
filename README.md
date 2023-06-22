@@ -280,13 +280,9 @@
 - unlike function based component we write all state variables inside one object only
 - suppose u have more state variables in state object
 - whenever u write with this keyword it will be shared with all methods
--     this.state = {
+-      this.state = {count:0, count1:1}
 
-  count: 0,
-  count1: 1
-  }
-
-  - if u are updating only one state variable using this.setState(this.state.count++) then it will update only first state variable it won't touch remaining variables
+- if u are updating only one state variable using this.setState(this.state.count++) then it will update only first state variable it won't touch remaining variables
 
 # React Licycle method diagram
 
