@@ -213,6 +213,7 @@
   # useEffect() hook
 
 - useEffect() has its own purpose its just like javascript function we import from react library
+-       import {useState} from 'react';
 - it will be called each time when component renders
 -       useEffect(()=> {});
 - it will be called only when render cycle completed (intial render time)
@@ -250,7 +251,7 @@
 - never write useState() in if condition it doesn't throw any error by its not good practise to write useState() in if or for loop or function
 - if use useState() inside if sometimes the variable exist sometime it doesn't so it creates some inconsistent
 - whenever a function start with use its a react hook ex: useState & useEffect & useRouterError
-
+-       import {useState} from 'react';
 -       const [count, setCount] = useState(0);
 -       const arr = useState(0);
         const [count, setCount] = arr;
@@ -318,11 +319,24 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 # componentDidMount
 
 - it will be called only after componenet mounted(loaded) on the web page
+-       componentDidMount() {
+          setInterval(() => {
+            console.log("hello react");
+          })
+        }
 
 # componentDidUpdate
 
 - this method will be called after update the state variable and update the dom with latest api data then it will call componentDidUpdate
 - when state variable update every time componentDidUpdate will be called
+-       componentDidUpdate(prevProp, prevState) {
+          if(this.state.count !== prevState.count) {
+
+          }
+          if(this.state.count2 !== prevState.count2) {
+
+          }
+        }
 
 # componentWillUnmount
 
@@ -333,6 +347,10 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 - example you are going from aboutus page to contactus page as soon as u go to contactus page componentWillUnmount will remove aboutus page from DOM(web page)
 
 - Never ever Compare React LifeCycle method to functional components both are diffrent
+
+-       componentWillUnmount() {
+          clearInterval(this.timer);
+        }
 
 # single page application problem
 
