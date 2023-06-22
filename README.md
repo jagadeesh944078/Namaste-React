@@ -280,7 +280,8 @@
 - unlike function based component we write all state variables inside one object only
 - suppose u have more state variables in state object
 - whenever u write with this keyword it will be shared with all methods
-- this.state = {
+-     this.state = {
+
   count: 0,
   count1: 1
   }
