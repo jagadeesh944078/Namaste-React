@@ -264,3 +264,53 @@
   - server side routing (Ex when u do navigation it will make a network call and redirect to one page)
 
   # dynamic routing
+
+# Episode - 08
+
+# class Based Component
+
+- most of interviwers will ask class based component because there are older project where class based components used
+- if u understand class based components understanding react will be easy
+- u will understand React life cycle easily
+- class based component is a normal javascript class which extends with react.component and which has render() method which return some piece of jsx
+- React.component is a class which react give to us and inherting some properties from that class using extend keyword and it comes from react library
+- you always should use this keyword for props so that u can access in entire class component
+- when you are loading function based component means u are invoking or mounting that component on the web page
+- when you are loading class based component means u are creating instance of the class
+- unlike function based component we write all state variables inside one object only
+- suppose u have more state variables in state object
+- whenever u write with this keyword it will be shared with all methods
+- this.state = {
+  count: 0,
+  count1: 1
+  }
+
+  - if u are updating only one state variable using this.setState(this.state.count++) then it will update only first state variable it won't touch remaining variables
+
+# React Licycle method diagram
+
+Refer Link
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+# componentDidMount
+
+- it will be called only after componenet mounted(loaded) on the web page
+
+# componentDidUpdate
+
+- this method will be called after update the state variable and update the dom with latest api data then it will call componentDidUpdate
+- when state variable update every time componentDidUpdate will be called
+
+# componentWillUnmount
+
+- mounting meaning adding ui in browser and unmounting means removing page from UI
+- before browser remove Ui from webpage componentWillUnaount will remove that page
+- lot of things u will remove before leaving the page
+- u can see example by adding setinterval in componentDidAmount() method
+- example you are going from aboutus page to contactus page as soon as u go to contactus page componentWillUnmount will remove aboutus page from DOM(web page)
+
+- Never ever Compare React LifeCycle method to functional components both are diffrent
+
+# single page application problem
+
+- example u can use setInterval() do experiment
