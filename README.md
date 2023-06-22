@@ -323,6 +323,10 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
           setInterval(() => {
             console.log("hello react");
           })
+          const data = 2;
+          this.setState({
+            count:data
+          })
         }
 
 # componentDidUpdate
