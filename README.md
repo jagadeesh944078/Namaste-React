@@ -251,6 +251,13 @@
 - if use useState() inside if sometimes the variable exist sometime it doesn't so it creates some inconsistent
 - whenever a function start with use its a react hook ex: useState & useEffect & useRouterError
 
+-       const [count, setCount] = useState(0);
+-       const arr = useState(0);
+        const [count, setCount] = arr;
+-       const arr = useState(0);
+        const count = arr[0];
+        const setCount = arr[1];
+
 # routing configuration
 
 - official documentation of react router dom
