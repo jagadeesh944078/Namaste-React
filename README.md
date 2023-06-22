@@ -212,12 +212,16 @@
 
   # useEffect() hook
 
-  - useEffect() has its own purpose its just like javascript function we import from react library
-
+- useEffect() has its own purpose its just like javascript function we import from react library
+- it will be called each time when component renders
 -       useEffect(()=> {});
+- it will be called only when render cycle completed (intial render time)
 -       useEffect(()=> {}, []);
+- it will be called each time when local state variable(count) changes
 -       useEffect(()=> {}, [count]);
+- it will be called each time when local state variable(count) changes
 -       useEffect(()=> {}, [count2]);
+- it will be called for component cleaning purpose
 -       useEffect(()=> {
         const timer = setInterval(() => {}, 2000);
         return () => { clearInterval(timer);}
