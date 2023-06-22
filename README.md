@@ -216,7 +216,7 @@
   -      useEffect(()=> {});
   -      useEffect(()=> {}, []);
   -      useEffect(()=> {}, [count]);
-  -      useEffect(()=> {}, [count2]);
+        useEffect(()=> {}, [count2]);
 
   # swiggy api call
 
