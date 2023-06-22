@@ -213,10 +213,18 @@
   # useEffect() hook
 
   - useEffect() has its own purpose its just like javascript function we import from react library
-  -      useEffect(()=> {});
-  -      useEffect(()=> {}, []);
-  -      useEffect(()=> {}, [count]);
-        useEffect(()=> {}, [count2]);
+    useEffect(()=> {});
+    useEffect(()=> {}, []);
+    useEffect(()=> {}, [count]);
+    useEffect(()=> {}, [count2]);
+    useEffect(()=> {
+    const timer = setInterval(() => {
+
+          }, 2000);
+        return () => {
+          clearInterval(timer);
+        }
+        }, [count2]);
 
   # swiggy api call
 
