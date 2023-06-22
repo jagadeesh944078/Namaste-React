@@ -213,75 +213,72 @@
   # useEffect() hook
 
   - useEffect() has its own purpose its just like javascript function we import from react library
-    useEffect(()=> {});
-    useEffect(()=> {}, []);
-    useEffect(()=> {}, [count]);
-    useEffect(()=> {}, [count2]);
-    useEffect(()=> {
-    const timer = setInterval(() => {
 
-          }, 2000);
-        return () => {
-          clearInterval(timer);
-        }
-        }, [count2]);
+-       useEffect(()=> {});
+-       useEffect(()=> {}, []);
+-       useEffect(()=> {}, [count]);
+-       useEffect(()=> {}, [count2]);
+-       useEffect(()=> {
+        const timer = setInterval(() => {}, 2000);
+        return () => { clearInterval(timer);}
+        }, []);
 
-  # swiggy api call
+# swiggy api call
 
-  # shimmer UI
+# shimmer UI
 
-  # episode-07
+# episode-07
 
-  # use Effect()
+# use Effect()
 
-  # create component shortcut in vs code
+# create component shortcut in vs code
 
-  - just type "rafce" and enter
+- just type "rafce" and enter
 
-  - if there is no dependency array in useEffect() it will every render cycle
-  - if there is a dependency array "[]" in useEffect() it will call only in intial render(just once)
-  - if there is a dependency array with "[btnNameReact]" it will call each time when btnNameReact updated
+- if there is no dependency array in useEffect() it will every render cycle
+- if there is a dependency array "[]" in useEffect() it will call only in intial render(just once)
+- if there is a dependency array with "[btnNameReact]" it will call each time when btnNameReact updated
 
-  # useState()
+# useState()
 
-  - always create useState() inside component not outside the component
-  - always write useState() on top of the component because javascript is single threaded language it executes code line by line react also understood properly if initilization do on top
-  - never write useState() in if condition it doesn't throw any error by its not good practise to write useState() in if or for loop or function
-  - if use useState() inside if sometimes the variable exist sometime it doesn't so it creates some inconsistent
-  - whenever a function start with use its a react hook ex: useState & useEffect & useRouterError
+- always create useState() inside component not outside the component
+- always write useState() on top of the component because javascript is single threaded language it executes code line by line react also understood properly if initilization do on top
+- never write useState() in if condition it doesn't throw any error by its not good practise to write useState() in if or for loop or function
+- if use useState() inside if sometimes the variable exist sometime it doesn't so it creates some inconsistent
+- whenever a function start with use its a react hook ex: useState & useEffect & useRouterError
 
-  # routing configuration
+# routing configuration
 
-  - official documentation of react router dom
-    https://reactrouter.com/en/main/routers/create-browser-router
+- official documentation of react router dom
+  https://reactrouter.com/en/main/routers/create-browser-router
 
-  - first install npm i "react-router-dom"
-  - import "createBrowserRouter" in App.js
-  - u have to do some configuration for createBrowserRouter that configuration is list of objects
-  - create configuration inside approuter
-  - configuration means some information it will define what will happen on specific route
-  - each and every object defines path and what should happen on that path
-  - you have to import "RouterProvider" from react router library and it provides routing configuration to the app
-  - if there is any error u have to give errorelement
-  - { path: "/", element: <AppLayout />, errorElement: <Error /> }
-  - we use "useRouteError" for showing specfic error to user on the page
-  - support in your app header and footer fixed and only body should be loaded in that case we use "children" in configuration
-  - import "outlet" from react-router what it will do whenver any change in router it will be filled with children element according to the path
-  - when u are using react u want to navigate from one page to another page don't use "anchor tag "because complete page will be refreshed if u use anchor tag
-  - "Link" component has super power that react router dom gives us for navigating from one page to another page
-  - when u use "Link" its just refresh the page not reloads the page and everything in one single page
-  - "Link" when u see in developer console u see anchor tag behind the scene react uses anchor tag react keep eye on this anchor tag
+- first install npm i "react-router-dom"
+- import "createBrowserRouter" in App.js
+- u have to do some configuration for createBrowserRouter that configuration is list of objects
+- create configuration inside approuter
+- configuration means some information it will define what will happen on specific route
+- each and every object defines path and what should happen on that path
+- you have to import "RouterProvider" from react router library and it provides routing configuration to the app
+- if there is any error u have to give errorelement
+- { path: "/", element: <AppLayout />, errorElement: <Error /> }
+- we use "useRouteError" for showing specfic error to user on the page
+- support in your app header and footer fixed and only body should be loaded in that case we use "children" in configuration
+- import "outlet" from react-router what it will do whenver any change in router it will be filled with children element according to the path
+- when u are using react u want to navigate from one page to another page don't use "anchor tag "because complete page will be refreshed if u use anchor tag
+- "Link" component has super power that react router dom gives us for navigating from one page to another page
+- when u use "Link" its just refresh the page not reloads the page and everything in one single page
+- "Link" when u see in developer console u see anchor tag behind the scene react uses anchor tag react keep eye on this anchor tag
 
-  # Single Page Applcation
+# Single Page Applcation
 
-  - its a one page only components getting interchanged
+- its a one page only components getting interchanged
 
-  # 2 types of routing
+# 2 types of routing
 
-  - client side routing -(ex: here there is no network call only component get replaced)
-  - server side routing (Ex when u do navigation it will make a network call and redirect to one page)
+- client side routing -(ex: here there is no network call only component get replaced)
+- server side routing (Ex when u do navigation it will make a network call and redirect to one page)
 
-  # dynamic routing
+# dynamic routing
 
 # Episode - 08
 
