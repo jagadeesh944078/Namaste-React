@@ -158,6 +158,12 @@
   2. named export(ex: if u want to export multiple things use named export export const "name" etc..)
 
   3. default import(ex: import Header from './component/Header' or import Header from './component/Header.js')
+
+  # 2 ways u can import
+
+  -      import user from './user';
+  -      import userFunctionComponent from './user';
+
   4. named import(ex: import {Header} from '../util/Header' or import {Header} from '../util/Header.js')
 
   # Namasthe Food App Planning
@@ -207,6 +213,10 @@
   # useEffect() hook
 
   - useEffect() has its own purpose its just like javascript function we import from react library
+  -      useEffect(()=> {});
+  -      useEffect(()=> {}, []);
+  -      useEffect(()=> {}, [count]);
+  -      useEffect(()=> {}, [count2]);
 
   # swiggy api call
 
