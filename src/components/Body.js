@@ -2,6 +2,8 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
+import { filterList } from "../utils/helper";
 
 const Body = () => {
   /* local state variable - super powerful of variable */
@@ -35,6 +37,12 @@ const Body = () => {
   //     return <Shimmer />;
   //   }
 
+  const isOnline = useOnline();
+
+  if (!isOnline) {
+    return <h1>Oops check your internet connection</h1>;
+  }
+
   return listOfRestaurant?.length === 0 ? (
     <Shimmer />
   ) : (
@@ -47,10 +55,12 @@ const Body = () => {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
+          <button>hello {}</button>
           <button
             onClick={() => {
-              const filteredRestroList = listOfRestaurant.filter((res) =>
-                res.data.name.toLowerCase().includes(searchText.toLowerCase())
+              const filteredRestroList = filterList(
+                searchText,
+                listOfRestaurant
               );
               setFilteredRestarentList(filteredRestroList);
             }}

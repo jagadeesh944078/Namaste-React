@@ -359,3 +359,42 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 # single page application problem
 
 - example u can use setInterval() do experiment
+
+# episode - 09
+
+# custom hooks
+
+# why do we need custom hooks
+
+- readbility
+- reusability
+- it makes your code more testable (i can write separate test cases for helper functions)
+- (example) - when iam writing test cases for body component no need to worry about helper function test cases i don't need to write test cases in body component whether filter working or not because we write separate test cases for filter function
+- it make our code maintainable(easy to debug)
+- (example) suppose there is any issue in filter logic if u write it separetly u can fix the things quickly otherwise searching filter fucntion in component only take alot of time
+- hook is just a function
+- our code is moduluer means brokendown our code into meaningfull pieces
+- our components are moduluer means created components into smaller chunks (every component has its own responsibility)
+- always create hook with the name of "use" infront of it thats react way of knowing its hook
+- when u are creating hook start firstletter with small "u"
+- better keep default export for hook because we only export one hook(it make sense)
+- helper file u can make named export because we can export many helper functions from that file
+
+- hook are normal functions only we just extract some logic out in diffrent function
+- custom hook which return some piece of javascript or u can say object,or data
+- whenever u add eventlistner in code when u are leaving that page its good practise to cleanup that eventlistner
+
+# Lazy Loading or On Demand Loading
+
+- some people call chunking,code splitting, dynamic bundling, lazy loading all are same
+- you have to keep your bundle size small still logical
+- basically in large scale application we build bundler based on the use case(its upon developer wisdom)
+- when i will be building any website i will use code spliting and make sure bundler won't contain some random code(logical bundling)
+- example take makemytrip website when u click on railways only railway bundler should be loaded when u click on buses only bused related bundler should run this is known as Ondemand loading
+- makemytrip images all adding using cdn link(should check how to add)
+- paytm also recharge one bundler and upi also one bundler etc..
+- when u are loading components on-demand react try to suspend loading
+- its still SPA so once bundler loaded again it won't take time because its already bundle once
+- when u write component inside Suspense react knows it will be loading lazy so react auto magically handle this behind the scene
+- never ever load components dynamically inside another component
+- wherever you do import component there only do the lazy loading
