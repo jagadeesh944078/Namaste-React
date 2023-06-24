@@ -48,14 +48,13 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className="bg-purple-50 py-4">
           <input
             type="text"
             className="search-box"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button>hello {}</button>
           <button
             onClick={() => {
               const filteredRestroList = filterList(
@@ -80,7 +79,7 @@ const Body = () => {
           Top Rated Filter
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRestarentList?.map((resData) => (
           <Link key={resData.data.id} to={"/restarent/" + resData.data.id}>
             <RestaurantCard resData={resData} />

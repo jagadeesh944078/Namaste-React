@@ -398,3 +398,89 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 - when u write component inside Suspense react knows it will be loading lazy so react auto magically handle this behind the scene
 - never ever load components dynamically inside another component
 - wherever you do import component there only do the lazy loading
+
+# Episode -10
+
+# many ways we can write css
+
+1. Normal Native css (adding everthing in index.css)
+2. Scss (using index.scss)
+3. inline css (advantage of writing css inline is saving time)
+4. component Libraries (bootstrap,material UI,Chakra,base UIits newer and faster way for building apps)
+5. styled-components(https://styled-components.com/)
+6. Tailwind css frameWork
+
+# why we do need css framework
+
+- primary reason we need optimized css and second thing is it saves time
+- development becomes faster when u use framwork(ex: Tailwind)
+- advantage of using scss is nesting,mixins,variables,reusability
+- scss is finally converted into css only
+- internal css is not good way of writing because its diffcult to maintain and we can't reuse it again
+- the job of processing is heavy for browser for understanding(always avoid internal css)
+
+# why we need to use material UI or any library
+
+# Pros
+
+- if suppose lot of developers working in one project so everybody can use same design UI there is consistency in the project
+- easy to use
+- it gives us some built in components we can reuse that
+- no need to focus on css much
+- to maintain consistent UI
+- none of the library is best as well as worst it depends on requirment what u will prefer because some company prepare antdesign some company prepare materialUI and some company prefer to build there own css library
+
+# can we use multiple css libraries ?
+
+- yes of course because at the end of the day all are packages so you can install and use it but its not good practise to use multiple libraries in one project because one button u take from one library another one from another library so its not recommend practise and you have to maintain consistency in your project
+
+# cons
+
+- it makes bundle size heavy
+- we loose our control on design (person customization becomes hard)
+- ex: suppose if i use "material ui" i have to maintain design as per material UI only
+
+# Tailwind css
+
+- best documentation for refer tailwind https://tailwindcss.com/
+- its open source css framework and tailwind comes with the mix of things
+- it says that u can write CSS on the go(in the same file write html & css)
+- its having reusability
+- comes with lot of prebuilt classes u can automatically build
+- less bundle size as its minimal css that offer to us
+- its very flexible UI(its very much customizable)
+- tailwind css says write it in my way how i tell u to write i will override everything
+- basically u have to write it in Tailwind style
+- tailwind css works with just class names only
+- we need to create postcssrc file and do some configuration because while bundleing your app u need to tell parcel like u are using tailwing inside your project and compile tailwind css into normal css
+- when u use tailwind css nothing should be there in index.css only 3 lines should be there (refer documentation)
+- why we import 3lines in index.css because this is the place where u can tell u are using tailwing and u will be importing classes from its base,component,utilility from tailwind
+- here tailwind also divided its classes into base,component,utility
+- use Tailwind CSS IntelliSense extension it will give suggestions to add tailwind class names
+- if extension not showing suggestion do ctrl + space
+- suppose u want to give exact pixels which tailwind wont offer then use like this w-[200px]
+- u can check tailwind css in network so here parcel taking help from postcss and tailwind and compile all those classes and ship it into our project
+- tailwing only include classes u used in project shipped to production that's why bundle size is less
+- even when u add dynamic class (ex: w-[200px]) it will add those classes also in bundle
+- tailwind u no need to worry about writing classnames just we can use tailwind classnames
+- suppose u writing tailwind classNames again and again but when it bundles its showes only one time
+
+# media queries in tailwind
+
+- normal we write css for 3types of device small(phone),medium(tab),large(desktop)
+- tailwind we write sm:bg-blue-50 as soon as it crosses size of small device it changes color to blue same for medium and large screens
+
+# Tailwind Pros
+
+- code is less
+- no duplicate css
+- bundle size is small
+- faster development(don't have to switch to css and html like that)
+- easy to debug (easy to use)
+- u can customize as u want
+- with jsx and tailwind u don't have to go outside the javascript we do everything in js file
+
+# TailWind Cons
+
+- it comes with learning curve(suppose outside very less developer know it so first it will take some time to understand it)
+- it also makes our code little ugly
