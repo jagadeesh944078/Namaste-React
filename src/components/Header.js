@@ -2,10 +2,12 @@ import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import UseContext from "../utils/UseContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const { user } = useContext(UseContext);
   const [btnNameReact, setBtnNameReact] = useState("Login");
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="flex justify-between bg-purple-50 mb-4">
@@ -23,7 +25,9 @@ const Header = () => {
           <li className="px-4">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="px-4">Cart</li>
+          <li className="px-4">
+            <Link to="/cart">Cart</Link> - {cartItems?.length}
+          </li>
           <li>{user.name}</li>
           <li className="px-4">
             <Link to="/instamart">InstaMart</Link>
