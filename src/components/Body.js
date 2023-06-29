@@ -1,9 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import { filterList } from "../utils/helper";
+import UseContext from "../utils/UseContext";
+import MyContext from "../utils/MyContext";
 
 const Body = () => {
   /* local state variable - super powerful of variable */
@@ -12,6 +14,8 @@ const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestarentList, setFilteredRestarentList] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const { user, setUser } = useContext(UseContext);
+  const { myContext, setMyText } = useContext(MyContext);
 
   /* useEffect calls after body component renders */
   /* here we pass 2 arguments 1 is arrow function(call back function) another one is dependency array*/
@@ -66,6 +70,23 @@ const Body = () => {
           >
             search
           </button>
+          <input
+            value={user.name}
+            onChange={(e) => {
+              setUser({
+                ...user,
+                name: e.target.value,
+              });
+            }}
+          ></input>
+          <input
+            value={myContext.text}
+            onChange={(e) => {
+              setMyText({
+                text: e.target.value,
+              });
+            }}
+          ></input>
         </div>
         <button
           className="filter-btn"

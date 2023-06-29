@@ -1,24 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
+import UseContext from "../utils/UseContext";
 
 const Header = () => {
+  const { user } = useContext(UseContext);
   const [btnNameReact, setBtnNameReact] = useState("Login");
-
-  /* if no dependency array - useEffect() called on each render cycle */
-  // useEffect(() => {
-  //   console.log("useEffect called");
-  // });
-
-  /*if there is a dependency array "[]" => useEffect() will call on intial render(just once) */
-  // useEffect(() => {
-  //   console.log("useEffect called");
-  // }, []);
-
-  /* if dependecy array is "[btnNameReact]" => called everytime btnNameReact updated */
-  // useEffect(() => {
-  //   console.log("useEffect called");
-  // }, [btnNameReact]);
 
   return (
     <div className="flex justify-between bg-purple-50 mb-4">
@@ -37,6 +24,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li className="px-4">Cart</li>
+          <li>{user.name}</li>
           <li className="px-4">
             <Link to="/instamart">InstaMart</Link>
           </li>

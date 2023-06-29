@@ -484,3 +484,78 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 - it comes with learning curve(suppose outside very less developer know it so first it will take some time to understand it)
 - it also makes our code little ugly
+
+# episode-11
+
+# UI Layer
+
+# Data Layer
+
+# State (local variable)
+
+- suppose there is a container and u want variable which has scope within that container known as state
+
+# Props
+
+- sending data from Parent to Child we use Props
+- passing data from one component(element) from another component(element) we use props
+-       <Restacard {...res.data}>
+- install react developer tool chrome extension
+- after installing there is a option to select component there u can see component structure u can say like mini virtual Dom
+- this tool will help u to debug the data layer(u can see props data)
+
+# Props Drilling
+
+- sending data from parent -> child -> child -> child this chaining known as "Props Drilling"
+- basically u are driiling all props for accessing props
+
+# disadvantage of props Drilling
+
+- suppose u are sending data from parent - child through 10 component remaining 10 components not using that data but still u are sending it so its not good way
+- suppose u change one thing in single component one time props so it will rerender all component which are using that porps unnessarily and it makes our code cluttered
+
+# Child to Parent
+
+- very few cases u need to send data from child to parent
+- we can use custom hook but all times its not good practise
+- data managment decide ur app reusable and use data wisily structure it properly
+- we build 2 types of accordian basic accordian and closed accordian
+- we can't change the sibiling of another state component
+
+# Lifting the state up
+
+- example given accordian
+
+# profiler(React developer tool extension)
+
+- here you are having option to start recording and stop recording
+- so here u can see how much time each component took to load
+- with these small things u can make your app performence better
+- always try to use less libraries as possible (if u use shimmer from external it take more time compare to own created shimmer)
+- its for development purpose and u can't see in production there is separate thing in production
+- if u create global variable for storing data react can't watch it and won't run reconcilation alogaritham
+- for storing data centrly we can use local storage but its storage in browser and updating localstorage heavy and costly operation
+
+# context(createContext & useContext)
+
+- i want some piece of data accessiable anywhere in my app for that we use react context
+- useContext at end of the hook and hook at end of the its javascript function
+- state and props are tied to the component but context not tied to component u can store it central place and use anywhere in your component
+- this is so easy then drilling props
+- context like useState for your whole big application u can use context wherever u wish to its like datastore
+- using UserContext.provide u can pass data dynamically and overide default values
+
+# why do we need state & props can i use context everywhere?
+
+- No because state and props tied to the component. context is central storage so u don't use context everything
+- only use context for data which is required all across your appliction in diffrent diffrent places
+
+# why i keep usercontext.provider inside all components?
+
+- because u use central stored data all your components and dynamically data is updated then that data should be updated where u use the usecontext
+- and u can use usecontext for small protion of app as well
+- by using same useContext i can diffrent data in diffrent place but logically u should not do this
+- Ui layer tailwind making super powerful
+- data layer modifying props and state usecontext
+- example suppose when u do any changes and update usecontext data and when u go to aboutus u can see updated data in that component the abouts component we loaded lazy and still we are able to see updated data
+- because here UI layer and data are diffrent they works parrelly and independently here data layer stays and ui layer do rendering and run reconciliation algoritham all staff
