@@ -9,6 +9,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurentMenu from "./components/RestaurentMenu";
 import UseContext from "./utils/UseContext";
 import MyContext from "./utils/MyContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 // import InstaMart from "./components/InstaMart";
 /* upon on-demand loading -> upon render -> suspend loading */
 const InstaMart = lazy(() => import("./components/InstaMart"));
@@ -22,22 +25,24 @@ const AppLayout = () => {
   const [myText, setMyText] = useState({ text: "rajashekar" });
 
   return (
-    <UseContext.Provider
-      value={{
-        user: user,
-        setUser: setUser,
-      }}
-    >
-      <MyContext.Provider
+    <Provider store={store}>
+      <UseContext.Provider
         value={{
-          myContext: myText,
-          setMyText: setMyText,
+          user: user,
+          setUser: setUser,
         }}
       >
-        <Header />
-        <Outlet />
-      </MyContext.Provider>
-    </UseContext.Provider>
+        <MyContext.Provider
+          value={{
+            myContext: myText,
+            setMyText: setMyText,
+          }}
+        >
+          <Header />
+          <Outlet />
+        </MyContext.Provider>
+      </UseContext.Provider>
+    </Provider>
   );
 };
 
@@ -67,6 +72,10 @@ const appRoot = createBrowserRouter([
             <InstaMart />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

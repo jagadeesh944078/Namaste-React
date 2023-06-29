@@ -559,3 +559,81 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 - data layer modifying props and state usecontext
 - example suppose when u do any changes and update usecontext data and when u go to aboutus u can see updated data in that component the abouts component we loaded lazy and still we are able to see updated data
 - because here UI layer and data are diffrent they works parrelly and independently here data layer stays and ui layer do rendering and run reconciliation algoritham all staff
+
+# episode - 12
+
+- There are 2 types of layers
+
+1. UI layer
+
+- what u see in browser is UI layer the view of the webpage we called UI layer
+
+2. Data layer
+
+- passing data from one component to another component and state managment,using context all are part of Data layer
+
+# why do we use useContext
+
+- to avoiding prop drilling
+
+# when can we use react context?
+
+- we can use for login info and dark theme and white theme and for cart and for wishlist we can use react context
+
+# to make full fledged application make performent only react can do that?
+
+- no react can't do that u need lot of libraries and tools (we need bundler, routerdom for router, package for testing)
+
+# when do we use context and when do we use Redux?
+
+- if u are building small application and for managing data u can use react context
+- some people use context for large scale application also that's f9 but when your application grows u will have so many contexts and so many things happening so redux give u proper way of handing, managing, reading and modifying data
+- lot of companies choose redux and some of companies choose alternative of redux store
+
+# Redux
+
+- suppose u are building small application and in the application handling data is very easy and u can manage data using state and props and other things.so u don't need to worry much about data
+- but in large sclae production ready application handling data is very important thing and it becomes very critical
+  for that most companies use Library "Redux"
+- to manage our data properly we can use redux insteading of creating diffrent or multiple contexts we can create redux store
+- redux is used for data managment
+- if u are building small applications u don't need redux
+- redux has its own importance so only use it if you are buidling large scale application which invovles alot of data handling
+- redux and react is completely diffrent redux is not part of react
+- redux has come of with something known as "ReactToolKit" (https://redux-toolkit.js.org/)
+- for all application u use "Redux Toolkit" only because "Redux Store" configuring setup is very complex and old way
+- redux store at end of day big object which has diffrent section those sections are small pieces
+- redux store also not tied to any component and u can access from anywhere in your application because like context api Redux also store data centrally
+- each store can have diffrent slices of store
+- it can have useSlice and authenticationSlice and CardSlice etc.. we can multiple such slices like this
+- slice is small portion of your store
+- suppose u have book big fledged store its broken down to small slices
+- our components directly can't modify our store
+- i will have to dispatch an action (lets add one action name addItem)
+- so that action will call a normal javascript function this function known as "reducer" and this function will modify the store
+- example suppose in food orderering app when u click + button its dispatching action which call reducer fucntion which update the slice of redux store
+
+# why we can't modify redux store directly?
+
+- when u have large scale application u don't want random component to randomly modify your store. we need to keep track of everything
+
+# can we use multiple redux store?
+
+- no everything u will keep in one redux store
+- login data and cart data and wishlist data everything will keep in store its not bad practise because we will create slices of our store
+
+# advantages of Redux
+
+- we need Redux for managing our data layer(handling huge amount of data)
+- suppose u r building large scale application where browser holds large amount of data in that place where you use redux for handling that data
+
+# cons of Redux
+
+- its very complex to setup
+- it has huge learning curve(u need to learn lot of things)
+- it was very complicated
+- there were lot of code u used to do copy paste
+
+# why we need to install 2 library
+
+- because redux-toolkit its core library of the redux and "react-redux" is bridge between react and redux
