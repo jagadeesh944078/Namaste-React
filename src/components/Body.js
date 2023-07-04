@@ -50,16 +50,18 @@ const Body = () => {
   return listOfRestaurant?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div data-testid="menu" className="body">
       <div className="filter">
         <div className="bg-purple-50 py-4">
           <input
+            data-testid="search"
             type="text"
             className="search-box"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
+            data-testid="search-btn"
             onClick={() => {
               const filteredRestroList = filterList(
                 searchText,
@@ -100,7 +102,7 @@ const Body = () => {
           Top Rated Filter
         </button>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap" data-testid="res-list">
         {filteredRestarentList?.map((resData) => (
           <Link key={resData.data.id} to={"/restarent/" + resData.data.id}>
             <RestaurantCard resData={resData} />

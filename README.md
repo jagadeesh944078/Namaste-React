@@ -637,3 +637,132 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 # why we need to install 2 library
 
 - because redux-toolkit its core library of the redux and "react-redux" is bridge between react and redux
+
+# episode -13 (testing)
+
+- before testing library people used to write test cases in Enzyme
+
+1. diffrence between json and javascript object?
+
+# React Testing Library
+
+- reference https://testing-library.com/docs/react-testing-library/intro/
+- it build top on jest and it uses jest behind the scene
+
+# why do we use Headless browser? (read more about it by own)
+
+- headless browser testing will become very fast because there is head and here no need to paint on the browser. there will be run on diffrent browser
+
+# what is test driven development?
+
+- we write test cases even before we write code known as test driven development
+
+# writing test driven development good or bad?
+
+- its very good because our test coverge will be always 100% and will get lot of confidence but development will become very slow but quality of code will be improved and many companies won't focus on this much
+
+# Why do we write test cases?
+
+- if we are adding new fetures are we breaking existing features that's why writing test cases gives confidence
+
+# unit testing & integration testing
+
+- we write some code to test the development code known as automatic testing
+- its core job of the developer
+- we will write test cases for each small unit
+- example here will write test cases for whether my logo showing properly or not and button working or not etc..
+- we as a developer mainly focus on unit testing and integration testing
+- testing also like development only it takes time to write test cases
+- if u don't become expert in testing that's f9 but u should know the minimum testing
+
+# React Testing Library
+
+- its part of testing library there is something known as Testing library which offer testing in react, angular etc..
+- we use jest for writing test cases(javscript testing framework)
+
+1. install react testing library
+
+-       npm install --save-dev @testing-library/react
+
+2. install jest
+
+-       npm i -D jest
+
+3. configure jest (create jest.config file)
+
+-       npx jest --init
+- we just want to do it once(because i want to create jest.config file once) that's why we use npx
+
+4. run command for testing
+
+-       npm run jest
+
+5. we face error because jest version more than 28 need to install jest enviorment jsdom
+
+-       npm i -D jest-environment-jsdom
+- after installing do "npm run jest" it will work
+
+6. create first testing file
+
+- u have to create folder like **test**(its also known as dhunder) because whatever files u create inside this folder jest consider those files as testing fiels
+- there is convention used in industry for creating test file use like sum.test.js and here u can create sum.spec.ts as well but u can create in any way
+- if u use sum.test.js and sum.js there u can understand easily like there sum.js file and for that there is testing file sum.test.js so better maintain standards
+
+7. write first test case example
+
+-     import {sum} from "../sum";
+      test('sum of 2 numbers', ()=> {
+        expect(sum(2,3)).toBe(5)
+      })
+
+- here u no need to import test and expect function in jest latest verion in old version we used to import
+
+- here first u have to test function which will receive 2 arguments first one name of test case and 2nd one is arrow function and inside arrow function u write always expect function and inside that function write method which u written in component here i have written sum function then toBe(5) written 5
+
+8.  you will face one error here because jest default wont find out "import" so u have to install babel-jest so babel will make jest understand there is something known as "import" u have written Es6
+
+-     npm install --save-dev babel-jest @babel/core @babel/preset-env
+- u have to create config file with name of babel.config.js or .babelsrc file
+-       module.exports = {
+                           presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
+                          };
+- or if u do configuration in .babelsrc file u have to do it in json format this file accept json format
+  here javascript object and json both diffrent and .babelsrc we use for removing all console.logs
+-        {
+           "presets": [['@babel/preset-env', {"targets": {"node": 'current'}}]],
+         };
+- there will be coverge folder which gives the coverage report
+- gitignore coverage report for avoiding in git commit
+- we are not running test on browser we are running on jsdom and it doesn't have root. here testing library gives u render function there u can render your component inside of that function only that component will be rendered
+- here after adding component in render function u will face issue like "jsx not allowed" so u should add below configuration in .babelsrc or babel.config whichever u create
+-      {
+          "presets": [
+                       ["@babel/preset-env", { "targets": { "node": "current" } }],
+                       ["@babel/preset-react", { "runtime": "automatic" }]
+                     ]
+       }
+- then install preset-react library using below npm command
+-        npm i -D @babel/preset-react
+- then if u face issue with "useSelector()" u have to create actual store in testing file
+-        import {Provider} from 'react-redux';
+-        <Provider store={store}><Header></Provider>
+- if u face issue with router because jest wont understand your link tag so createBrowserRouter() won't work because testing file is like a container not a browser instead of that we use StaticRouter and router can work without browser load
+-       import {StaticRouter} from 'react-router-dom/server'
+- if u face issue with fetch then here we jest don't know about fetch because here fetch given by browser so idealy u should not make an api call in testing we will use mock data for testing now we will mock our fetch in testing file. using jest we created dummy function see below line
+-     global.fetch = jest.fn()
+- here global.fetch means here we have created our own dummy fetch and attached to the global object now my code automatically understand what is happening inside fetch
+- fetch() actually it return a promise
+- after return a promise with readable stream data
+- if u want to run test cases in autosave mode add below line in package.json
+-      "scripts": {
+                    "watch": "jest --watch"
+                  }
+-       npm run watch
+- if u use tobeDocument() in test cases u will face error like tobeDocument() not a function so install jest-dom
+-      import '@testing-library/jest-dom'
+-      npm i -D @testing-library/jest-dom
+- suppose u are using direct image url it will work directly but if u import image from assest from it will give error because directly if u use url it will javascript string but png file it won't recognize that's why u have to create dummy.png
+- here jest will help us so u need to do configuration in jest.config file
+-         moduleNameWrapper: {
+              "\\.(png|jpg|svg)$":"../mock/dummyLogo.js"
+          }

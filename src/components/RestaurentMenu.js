@@ -28,7 +28,7 @@ const RestaurentMenu = () => {
     resList?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card.card;
 
   return (
-    <div>
+    <div data-testid="menu-card">
       <h1 className="font-bold text-2xl">{name}</h1>
       <h3 className="font-bold text-lg">{cuisines.join(", ")}</h3>
       <button className="m-2 p-2 bg-green-400" onClick={() => handleItems()}>
@@ -41,6 +41,7 @@ const RestaurentMenu = () => {
             {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
             <button
               className="bg-green-100 m-2 p-2"
+              data-testid="add-btn"
               onClick={() => addItemsToCart(item.card.info)}
             >
               Add

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1688299036256" clover="3.2.0">
+  <project timestamp="1688299036256" name="All files">
+    <metrics statements="56" coveredstatements="47" conditionals="12" coveredconditionals="7" methods="22" coveredmethods="14" elements="90" coveredelements="68" complexity="0" loc="56" ncloc="56" packages="3" files="10" classes="10"/>
+    <package name="components">
+      <metrics statements="52" coveredstatements="43" conditionals="12" coveredconditionals="7" methods="21" coveredmethods="14"/>
+      <file name="Body.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\components\Body.js">
+        <metrics statements="27" coveredstatements="21" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="6"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="44" count="7" type="stmt"/>
+        <line num="46" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="107" count="47" type="stmt"/>
+      </file>
+      <file name="Header.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\components\Header.js">
+        <metrics statements="7" coveredstatements="6" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="RestaurentMenu.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\components\RestaurentMenu.js">
+        <metrics statements="15" coveredstatements="13" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="4"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="39" count="45" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+      </file>
+      <file name="Shimmer.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\components\Shimmer.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+      </file>
+      <file name="sum.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\components\sum.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="mock">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="dummyLogo.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\mock\dummyLogo.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="menu.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\mock\menu.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="restarent.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\mock\restarent.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="MyContext.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\utils\MyContext.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="store.js" path="C:\Users\jagadeesh\Desktop\Namaste-React\Namaste-React\src\utils\store.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
